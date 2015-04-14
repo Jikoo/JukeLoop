@@ -1,0 +1,12 @@
+name: JukeLoop
+version: 1.2
+description: Makes jukeboxes loop
+author: metalhedd
+authors: [Jikoo]
+
+main: com.norcode.bukkit.jukeloop.JukeLoopPlugin
+
+commands:
+  jukeloop:
+    usage: /<command> reload
+    permission: jukeloop.admin
