@@ -50,6 +50,10 @@ public class LoopingJukebox {
 		}
 	}
 
+	public boolean isLoaded() {
+		return location.getWorld().isChunkLoaded(location.getBlockX() >> 4, location.getBlockZ() >> 4);
+	}
+
 	public Jukebox getJukebox() {
 		try {
 			Block block = location.getBlock();
@@ -108,6 +112,11 @@ public class LoopingJukebox {
 	}
 
 	public void doLoop() {
+
+		if (!isLoaded()) {
+			return;
+		}
+
 		Jukebox jukebox = getJukebox();
 		if (jukebox == null) {
 			this.isDead = true;
